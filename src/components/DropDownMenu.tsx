@@ -24,7 +24,7 @@ const DropDownMenu: FC<DropDownMenuProps> = ({handleOnChange, gameKeys}) => {
           value={key}
           selected={key === 'gameRecap'}
           >
-            {key === 'gameRecap'? `Total` : `Game ${Number(key)+1}`}
+            {key === 'gameRecap'? `Total` : `Period ${Number(key)+1}`}
           </option>)
         }
       </select>

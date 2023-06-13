@@ -14,7 +14,7 @@ jest.mock('react-router-dom', () => ({
 }));
 
 test('should renders status bar', () => {
-  render(<StatsBar team1Value={20} team2Value={32} maxValue={40} title="Goal per minute" />);
+  render(<StatsBar team1Value={20} team2Value={32} maxValue={40} title="Goal per minute" delayNumber={0} />);
 
   const team1Value = screen.getByText('20')
   const team2Value = screen.getByText('32')

@@ -18,3 +18,30 @@
  -moz-border-radius:100%;
  border-radius:100%;
 }
+
+.bar-percent-1{
+  transform: translateX(-00%);
+  animation: bar-animations-1 ease-in-out 1s forwards;
+}
+.bar-percent-2{
+  width: 0;
+  animation: bar-animations-2 ease-in-out 1s forwards;
+}
+
+@keyframes bar-animations-1 {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes bar-animations-2 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}

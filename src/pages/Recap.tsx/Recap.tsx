@@ -8,7 +8,7 @@ import { GameStats, StructuredGameData } from '../../interfaces/game'
 import DropDownMenu from '../../components/DropDownMenu';
 import { useParams } from 'react-router-dom';
 import { gameData } from '../../data/gameData';
-
+import { v4 as uuidv4 } from 'uuid';
 
 const Recap: FC = () => {
   let { matchId } = useParams(); 
@@ -66,6 +66,10 @@ const Recap: FC = () => {
     }
   }
 
+  const getMaxValue = (num1: number, num2: number): number => {
+    let result = num1 > num2? num1: num2
+    return result > 2? result+2: result+0.1
+  }
 
   return (
     <div className="Recap bg-black min-h-screen relative">
@@ -78,10 +82,12 @@ const Recap: FC = () => {
             formattedGameStat?.gameStatsId?
             gameStatsKeys.map((key, idx) => 
               <StatsBar 
-                key={idx} 
+                key={uuidv4()} 
+                delayNumber={idx}
                 team1Value={Number(formattedGameStat.away[key as keyof typeof formattedGameStat.away])} 
                 team2Value={Number(formattedGameStat.home[key as keyof typeof formattedGameStat.away])} 
-                maxValue={stats[key as keyof typeof stats].maxNum} 
+                // maxValue={stats[key as keyof typeof stats].maxNum} 
+                maxValue={getMaxValue(Number(formattedGameStat.away[key as keyof typeof formattedGameStat.away]), Number(formattedGameStat.home[key as keyof typeof formattedGameStat.away]))} 
                 title={stats[key as keyof typeof stats].meaning}
               />
             ):
