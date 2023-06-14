@@ -23,11 +23,11 @@ const GameHeader: FC<GameHeaderProps> = ({ homeTeam, awayTeam }) => {
   
   return (
     <div className="Game-header flex items-center justify-center">
-      <img src={awayTeamLogo} alt="team 2 logo" className='md:w-28 w-20 away-logo opacity-0 -translate-x-10' data-testid="away-logo" />
+      <img src={awayTeamLogo} alt="team 2 logo" className='md:w-28 w-20 away-logo opacity-0 md:-translate-x-10 -translate-x-4' data-testid="away-logo" />
       <div className='md:mx-8 mx-4 vs opacity-0 translate-y-4 font-bold'>
         VS
       </div>
-      <img src={homeTeamLogo} alt="team 1 logo" className='md:w-28 w-20 home-logo opacity-0 translate-x-10' data-testid="home-logo" />
+      <img src={homeTeamLogo} alt="team 1 logo" className='md:w-28 w-20 home-logo opacity-0 md:translate-x-10 translate-x-4' data-testid="home-logo" />
     </div>
   );
 };
